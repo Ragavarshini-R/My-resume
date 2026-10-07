@@ -1,0 +1,683 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ragavarshini R | Resume</title>
+
+    <style>
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e8e8e8;
+            color: #222;
+        }
+
+        .resume {
+            width: 210mm;
+            height: 297mm;
+            margin: 15px auto;
+            background: white;
+            padding: 13mm 15mm;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+
+        /* ================= HEADER ================= */
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #713c82;
+        }
+
+        .profile-img {
+            width: 30mm;
+            height: 30mm;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #d8b6df;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .header-info h1 {
+            font-size: 25px;
+            color: #713c82;
+            margin-bottom: 3px;
+        }
+
+        .header-info h2 {
+            font-size: 12px;
+            font-weight: normal;
+            color: #555;
+            margin-bottom: 7px;
+        }
+
+        .contact-line {
+            font-size: 8.5px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .contact-line a {
+            color: #713c82;
+            text-decoration: none;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        .section {
+            margin-top: 9px;
+        }
+
+        .section-title {
+            font-size: 11.5px;
+            color: #713c82;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: bold;
+            border-bottom: 1px solid #d9c5df;
+            padding-bottom: 3px;
+            margin-bottom: 5px;
+        }
+
+        .summary {
+            font-size: 8.5px;
+            line-height: 1.5;
+            color: #444;
+            text-align: justify;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .item {
+            margin-bottom: 5px;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .item-title {
+            font-size: 9.5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .date {
+            font-size: 8px;
+            color: #666;
+        }
+
+        .item-subtitle {
+            font-size: 8.5px;
+            color: #555;
+            margin-top: 1px;
+        }
+
+        /* ================= TWO COLUMN ================= */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill {
+            background: #f3e9f5;
+            color: #633d6f;
+            border-radius: 10px;
+            padding: 4px 7px;
+            font-size: 7.5px;
+            font-weight: bold;
+        }
+
+        /* ================= EXPERIENCE ================= */
+
+        .experience-title {
+            font-size: 9.5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .experience-company {
+            font-size: 8.5px;
+            color: #713c82;
+            font-weight: bold;
+        }
+
+        .bullet-list {
+            padding-left: 14px;
+            margin-top: 2px;
+        }
+
+        .bullet-list li {
+            font-size: 8px;
+            color: #444;
+            line-height: 1.45;
+            margin-bottom: 1px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .project {
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-size: 9px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .project-description {
+            font-size: 8px;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        /* ================= CERTIFICATES ================= */
+
+        .cert-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 12px;
+        }
+
+        .cert {
+            font-size: 7.8px;
+            color: #444;
+        }
+
+        .cert::before {
+            content: "• ";
+            color: #713c82;
+            font-weight: bold;
+        }
+
+        /* ================= ACHIEVEMENTS ================= */
+
+        .achievement {
+            font-size: 8px;
+            color: #444;
+            line-height: 1.45;
+            margin-bottom: 3px;
+        }
+
+        .achievement strong {
+            color: #633d6f;
+        }
+
+        /* ================= LANGUAGES ================= */
+
+        .languages {
+            display: flex;
+            gap: 7px;
+        }
+
+        .language {
+            font-size: 8px;
+            background: #eef6fb;
+            color: #416078;
+            padding: 4px 10px;
+            border-radius: 10px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+            text-align: center;
+            margin-top: 9px;
+            padding-top: 5px;
+            border-top: 1px solid #ddd;
+            font-size: 7px;
+            color: #777;
+        }
+
+        /* ================= PRINT ================= */
+
+        @media print {
+
+            body {
+                background: white;
+            }
+
+            .resume {
+                margin: 0;
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="resume">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="header">
+
+        <img
+            src="raga.jpeg"
+            alt="Ragavarshini R"
+            class="profile-img"
+        >
+
+        <div class="header-info">
+
+            <h1>Ragavarshini R</h1>
+
+            <h2>
+                B.Tech Artificial Intelligence & Data Science Student
+            </h2>
+
+            <div class="contact-line">
+
+                📧
+                <a href="mailto:ragavarshiniragavarshini04@gmail.com">
+                    ragavarshiniragavarshini04@gmail.com
+                </a>
+
+                &nbsp; | &nbsp;
+
+                💻
+                <a
+                    href="https://github.com/Ragavarshini-R"
+                    target="_blank"
+                >
+                    github.com/Ragavarshini-R
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PROFILE ================= -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Profile
+        </div>
+
+        <p class="summary">
+
+            B.Tech Artificial Intelligence and Data Science student
+            interested in Artificial Intelligence, Data Science and
+            technology-driven problem solving. Experienced in academic
+            projects, hackathon participation, internship learning and
+            professional certification programs. Passionate about
+            developing practical solutions for real-world problems and
+            continuously improving technical and communication skills.
+
+        </p>
+
+    </div>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Education
+        </div>
+
+        <div class="item">
+
+            <div class="item-header">
+
+                <div class="item-title">
+                    B.Tech – Artificial Intelligence and Data Science
+                </div>
+
+                <div class="date">
+                    2025 – 2029
+                </div>
+
+            </div>
+
+            <div class="item-subtitle">
+                Rathinam College
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Internship Experience
+        </div>
+
+        <div class="item">
+
+            <div class="item-header">
+
+                <div class="experience-title">
+                    Thiranex Internship
+                </div>
+
+                <div class="date">
+                    Internship
+                </div>
+
+            </div>
+
+            <ul class="bullet-list">
+
+                <li>
+                    Successfully participated in and completed the
+                    Thiranex internship program.
+                </li>
+
+                <li>
+                    Gained practical exposure to professional work,
+                    teamwork and technology-oriented learning.
+                </li>
+
+                <li>
+                    Developed experience in applying learning to
+                    practical and industry-oriented activities.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TWO COLUMN SECTION ================= -->
+
+    <div class="two-column">
+
+
+        <!-- LEFT -->
+
+        <div>
+
+
+            <!-- SKILLS -->
+
+            <div class="section">
+
+                <div class="section-title">
+                    Technical & Soft Skills
+                </div>
+
+                <div class="skills">
+
+                    <span class="skill">Python</span>
+                    <span class="skill">AI Concepts</span>
+                    <span class="skill">Data Science</span>
+                    <span class="skill">SQL</span>
+                    <span class="skill">HTML</span>
+                    <span class="skill">Problem Solving</span>
+                    <span class="skill">Communication</span>
+                    <span class="skill">Teamwork</span>
+                    <span class="skill">Canva</span>
+                    <span class="skill">PowerPoint</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECTS -->
+
+            <div class="section">
+
+                <div class="section-title">
+                    Projects
+                </div>
+
+
+                <div class="project">
+
+                    <div class="project-title">
+                        🌱 Smart Agri AI Portal
+                    </div>
+
+                    <div class="project-description">
+                        AI-based platform designed to provide farmers
+                        with agriculture-related information, government
+                        services and technology-driven solutions.
+                    </div>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div class="project-title">
+                        🌾 UZHAVAN AI
+                    </div>
+
+                    <div class="project-description">
+                        Tamil-first AI Crop Health Assistant designed to
+                        help farmers understand possible crop-health
+                        issues through simple and accessible technology.
+                    </div>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div class="project-title">
+                        🌳 Farmer Tree Climbing Assist Device
+                    </div>
+
+                    <div class="project-description">
+                        Safety-focused concept designed to assist farmers
+                        while climbing trees and reduce accident risks.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div>
+
+
+            <!-- CERTIFICATIONS -->
+
+            <div class="section">
+
+                <div class="section-title">
+                    Certifications
+                </div>
+
+                <div class="cert-list">
+
+                    <div class="cert">
+                        IBM Certificates
+                    </div>
+
+                    <div class="cert">
+                        NVIDIA Academy
+                    </div>
+
+                    <div class="cert">
+                        Cisco Networking Academy
+                    </div>
+
+                    <div class="cert">
+                        Kaggle
+                    </div>
+
+                    <div class="cert">
+                        Google AI – Coursera
+                    </div>
+
+                    <div class="cert">
+                        Certificate of Excellence
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACHIEVEMENTS -->
+
+            <div class="section">
+
+                <div class="section-title">
+                    Achievements & Participation
+                </div>
+
+
+                <div class="achievement">
+
+                    🏆 <strong>AIC ThinkRAISE</strong> —
+                    Participated in AIC ThinkRAISE, gaining exposure
+                    to innovation, entrepreneurship and problem-solving.
+
+                </div>
+
+
+                <div class="achievement">
+
+                    💼 <strong>Thiranex Internship</strong> —
+                    Successfully completed an internship and gained
+                    practical professional exposure.
+
+                </div>
+
+
+                <div class="achievement">
+
+                    📜 <strong>IBM Certifications</strong> —
+                    Completed IBM professional certification courses
+                    to strengthen technical and industry knowledge.
+
+                </div>
+
+            </div>
+
+
+            <!-- LANGUAGES -->
+
+            <div class="section">
+
+                <div class="section-title">
+                    Languages
+                </div>
+
+                <div class="languages">
+
+                    <span class="language">
+                        English
+                    </span>
+
+                    <span class="language">
+                        Tamil
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= INTEREST ================= -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Areas of Interest
+        </div>
+
+        <p class="summary">
+
+            Artificial Intelligence &nbsp; • &nbsp;
+            Data Science &nbsp; • &nbsp;
+            AI Applications &nbsp; • &nbsp;
+            Technology Innovation &nbsp; • &nbsp;
+            Hackathons &nbsp; • &nbsp;
+            Real-World Problem Solving
+
+        </p>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <div class="footer">
+
+        Ragavarshini R &nbsp; | &nbsp;
+        AI & Data Science Student &nbsp; | &nbsp;
+        2026
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
+```
